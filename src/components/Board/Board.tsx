@@ -1,3 +1,6 @@
+/* This code is similar to the Column component’s code, but instead of creating Tiles, 
+we create multiple columns, passing the required information to them, and then we render the result. 
+The this.renderColumns() method encapsulates this logic. */
 import React from 'react'
 import Column from '../Column/Column'
 import styles from './Board.module.css'

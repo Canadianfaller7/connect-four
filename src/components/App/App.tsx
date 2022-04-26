@@ -1,3 +1,6 @@
+/* This is the basic structure of the component: presentational logic to draw/render the 
+Board and the Status message,and a default App’s state. 
+*/
 import React from 'react'
 import Board from '../Board/Board'
 import { Props, State, ChipsPositions } from './types'
@@ -59,6 +62,10 @@ export default class App extends React.PureComponent<Props, State> {
 
         return `It's ${playerTurn}'s turn`;
     };
+
+    /* First, it needs the last empty Tile of the column that was clicked. And it gets the column number by parsing the tileId.
+Then, it adds a chip to the selected tile depending on the player’s turn, known by the App component alone. And it recalculates the game status.
+Last, it stores all the new information in the component’s state, re-rendering the entire application if something changes. React will decide this for us.*/
     handleTileClick = (tileId: string) => {
         const { chipsPositions, playerTurn } = this.state;
 
